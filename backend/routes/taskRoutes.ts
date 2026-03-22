@@ -10,15 +10,6 @@ router.get("/", async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: "Failed to get tasks" })
   }
-})
-
-router.get('/', async (req:Request, res: Response) => {
-  try {
-    const tasks = await Task.find();
-    res.json(tasks);
-  } catch (error) {
-    res.status(500).json({ message: 'Failed to fetch tasks '});
-  }
 });
 
 router.post("/", async (req: Request, res: Response) => {
