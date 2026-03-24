@@ -92,6 +92,7 @@ const handleUpdate = async () => {
         {tasks.map(task => (
           <li key={task._id}>
             <strong>{task.title}</strong> - {task.status}
+            <button onClick={() => handleEditClick(task)}>Edit</button>
             <button onClick={() => handleDelete(task._id)}>Delete</button>
           </li>
         ))}
