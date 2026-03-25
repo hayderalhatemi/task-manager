@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getTasks, createTask, deleteTask, updateTask } from './api'
+import './App.css'
 
 interface Task {
   _id: string
@@ -69,19 +70,20 @@ function App() {
   }
 
   return (
+    <div className='container'>
     <div style={{ padding: '2rem' }}>
       <h1>Student Task Manager</h1>
 
-      <div>
+      <div className='add-form'>
         <input placeholder='Title' value={title} onChange={e => setTitle(e.target.value)} />
         <input placeholder='Description' value={description} onChange={e => setDescription(e.target.value)} />
         <input type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} />
-        <button onClick={handleCreate}>Add Task</button>
+        <button className='btn-add' onClick={handleCreate}>Add Task</button>
       </div>
 
       {/* Edit form - shows only when editing */}
       {editingTask && (
-        <div>
+        <div className='edit-form'>
           <h3>Editing: {editingTask.title}</h3>
           <input value={editTitle} onChange={e => setEditTitle(e.target.value)} />
           <input value={editDescription} onChange={e => setEditDescription(e.target.value)} />
@@ -90,22 +92,32 @@ function App() {
             <option value="pending">Pending</option>
             <option value="completed">Completed</option>
           </select>
-          <button onClick={handleUpdate}>Save</button>
-          <button onClick={() => setEditingTask(null)}>Cancel</button>
+          <div className="task-buttons">
+          <button className='btn-save' onClick={handleUpdate}>Save</button>
+          <button className='btn-cancel' onClick={() => setEditingTask(null)}>Cancel</button>
+        </div>
         </div>
       )}
 
       <ul>
         {tasks.map(task => (
-          <li key={task._id}>
-            <strong>{task.title}</strong> - {task.status} - {task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'No Date'}
-            <button onClick={() => handleEditClick(task)}>Edit</button>
-            <button onClick={() => handleDelete(task._id)}>Delete</button>
+          <li key={task._id} className='task-item'>
+            <div className="task-info">
+              <strong>{task.title}</strong>
+              <span className={task.status === 'completed' ? 'status-completed' : 'status-pending'}>
+                {task.status}
+              </span>
+              <span>{task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'No Date'}</span>
+            </div>
+            <div className="task-buttons">
+            <button className='btn-edit' onClick={() => handleEditClick(task)}>Edit</button>
+            <button className='btn-delete' onClick={() => handleDelete(task._id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
     </div>
+    </div>
   )
 }
-
 export default App
