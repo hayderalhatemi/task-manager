@@ -87,3 +87,17 @@ ul {
   margin-bottom: 0.5rem;
   background-color: #fff;
 }
+
+.task-info span {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+.status-pending { color: #e67e22; font-weight: bold;}
+.status-completed { color: #27ae60; font-weight: bold;}
+
+.task-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
