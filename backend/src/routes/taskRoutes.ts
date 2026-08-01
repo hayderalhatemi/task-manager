@@ -8,9 +8,10 @@ router.get("/", async (req: Request, res: Response) => {
     const tasks = await Task.find()
     res.json(tasks)
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: "Failed to get tasks" })
   }
-});
+})
 
 router.post("/", async (req: Request, res: Response) => {
   try {
@@ -20,40 +21,41 @@ router.post("/", async (req: Request, res: Response) => {
       title,
       description,
       status,
-      dueDate
+      dueDate,
     })
 
     const savedTask = await task.save()
     res.status(201).json(savedTask)
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: "Failed to create task" })
   }
 })
 
 router.put("/:id", async (req: Request, res: Response) => {
   try {
-    const updatedTask = await Task.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    )
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    })
 
     res.json(updatedTask)
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: "Failed to update task" })
   }
 })
 
-router.delete('/:id', async (req: Request, res: Response) => {
+router.delete("/:id", async (req: Request, res: Response) => {
   try {
-    const deletedTask = await Task.findByIdAndDelete(req.params.id);
+    const deletedTask = await Task.findByIdAndDelete(req.params.id)
     if (!deletedTask) {
-      return res.status(404).json({ message: 'Task not found' });
+      return res.status(404).json({ message: "Task not found" })
     }
-    res.json({message: 'Task deleted successfully' });
+    res.json({ message: "Task deleted successfully" })
   } catch (error) {
-    res.status(500).json({ message: 'Failed to delete task' })
+    console.error(error)
+    res.status(500).json({ message: "Failed to delete task" })
   }
-});
+})
 
 export default router

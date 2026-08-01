@@ -51,7 +51,8 @@ h1 {
   gap: 0.5rem;
 }
 
-.edit-form input, .edit-form select {
+.edit-form input,
+.edit-form select {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -66,11 +67,26 @@ button {
   font-size: 0.9rem;
 }
 
-.btn-add { background-color: #3498db; color: white; }
-.btn-edit { background-color: #f39c12; color: white; }
-.btn-delete { background-color: #e74c3c; color: white; }
-.btn-save { background-color: #2ecc71; color: white; }
-.btn-cancel { background-color: #95a5a6; color: white; }
+.btn-add {
+  background-color: #3498db;
+  color: white;
+}
+.btn-edit {
+  background-color: #f39c12;
+  color: white;
+}
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+.btn-save {
+  background-color: #2ecc71;
+  color: white;
+}
+.btn-cancel {
+  background-color: #95a5a6;
+  color: white;
+}
 
 /*Task list*/
 ul {
@@ -94,8 +110,14 @@ ul {
   margin-left: 0.5rem;
 }
 
-.status-pending { color: #e67e22; font-weight: bold;}
-.status-completed { color: #27ae60; font-weight: bold;}
+.status-pending {
+  color: #e67e22;
+  font-weight: bold;
+}
+.status-completed {
+  color: #27ae60;
+  font-weight: bold;
+}
 
 .task-buttons {
   display: flex;
