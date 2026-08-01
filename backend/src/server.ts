@@ -15,7 +15,7 @@ app.use(express.json())
 app.use("/api/tasks", taskRoutes)
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Student Task Manager API is running")
+  res.send("Task Manager API is running")
 })
 
 const PORT = process.env.PORT || 5000
