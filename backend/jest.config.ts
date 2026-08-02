@@ -1,4 +1,4 @@
-import type { Config } from "jest";
+import type { Config } from "jest"
 
 const config: Config = {
   preset: "ts-jest",
@@ -7,6 +7,6 @@ const config: Config = {
   testMatch: ["**/*.test.ts"],
   moduleFileExtensions: ["ts", "js", "json"],
   clearMocks: true,
-};
+}
 
-export default config;
+export default config
