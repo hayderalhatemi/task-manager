@@ -11,7 +11,6 @@ A full-stack task management application built with React, Node.js, Express, Typ
 ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
 ![REST API](https://img.shields.io/badge/REST-API-orange)
 
-
 ## Live Demo
 
 **Frontend:** https://task-manager-lilac-pi-43.vercel.app
@@ -68,7 +67,25 @@ task-manager/
 └── frontend/
 ```
 
-## Getting Started
+## Architecture
+
+```text
+React Frontend
+      │
+      ▼
+ Axios (HTTP)
+      │
+      ▼
+Express REST API
+      │
+      ▼
+   Mongoose
+      │
+      ▼
+MongoDB Atlas
+```
+
+## Quick Start
 
 ### 1. Clone the repository
 
@@ -113,6 +130,8 @@ PORT=5000
 
 ## Roadmap
 
+Future improvements planned for this project:
+
 - [x] Full CRUD functionality
 - [x] Responsive design
 - [x] Backend deployment (Render)
@@ -123,6 +142,10 @@ PORT=5000
 - [ ] Unit testing
 - [ ] CI/CD with GitHub Actions
 
+## Contributing
+
+Contributions, suggestions, and feedback are welcome. Feel free to open an issue or submit a pull request.
+
 ## License
 
-This project is open source and available under the MIT License.
+This project is licensed under the MIT License.
