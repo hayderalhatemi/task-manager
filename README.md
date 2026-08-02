@@ -2,6 +2,16 @@
 
 A full-stack task management application built with React, Node.js, Express, TypeScript, and MongoDB. Users can create, update, complete, and delete tasks through a clean and responsive interface.
 
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)
+![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
+![REST API](https://img.shields.io/badge/REST-API-orange)
+
+
 ## Live Demo
 
 **Frontend:** https://task-manager-lilac-pi-43.vercel.app
