@@ -7,6 +7,8 @@ A full-stack task management application built with React, Node.js, Express, Typ
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-Tested-C21325?logo=jest&logoColor=white)
+![Supertest](https://img.shields.io/badge/Supertest-API%20Testing-FF6C37)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)
 ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
 ![REST API](https://img.shields.io/badge/REST-API-orange)
@@ -37,25 +39,36 @@ A full-stack task management application built with React, Node.js, Express, Typ
 - Set due dates
 - RESTful API
 - Responsive user interface
+- Backend API testing with Jest and Supertest
 
 ## Tech Stack
 
 ### Frontend
+
 - React
 - TypeScript
 - Axios
 - CSS
 
 ### Backend
+
 - Node.js
 - Express
 - TypeScript
 - Mongoose
 
+### Testing
+
+- Jest
+- Supertest
+- MongoDB Memory Server
+
 ### Database
+
 - MongoDB Atlas
 
 ### Deployment
+
 - Vercel (Frontend)
 - Render (Backend)
 
@@ -110,6 +123,28 @@ npm install
 npm start
 ```
 
+## Running Tests
+
+From the backend folder:
+
+```bash
+npm test
+```
+
+Run tests with coverage:
+
+```bash
+npm test -- --coverage
+```
+
+Current test coverage includes:
+
+- API health endpoint
+- Create task
+- Get all tasks
+- Update task
+- Delete task
+
 ## Environment Variables
 
 Create a `.env` file inside the `backend` folder:
@@ -136,10 +171,11 @@ Future improvements planned for this project:
 - [x] Responsive design
 - [x] Backend deployment (Render)
 - [x] Frontend deployment (Vercel)
+- [x] Backend testing (Jest + Supertest)
+- [ ] Frontend testing (React Testing Library)
 - [ ] Task filtering
 - [ ] Task search
 - [ ] Dark mode
-- [ ] Unit testing
 - [ ] CI/CD with GitHub Actions
 
 ## Contributing
