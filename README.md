@@ -111,6 +111,18 @@ PORT=5000
 | PUT | `/api/tasks/:id` | Update a task |
 | DELETE | `/api/tasks/:id` | Delete a task |
 
+## Roadmap
+
+- [x] Full CRUD functionality
+- [x] Responsive design
+- [x] Backend deployment (Render)
+- [x] Frontend deployment (Vercel)
+- [ ] Task filtering
+- [ ] Task search
+- [ ] Dark mode
+- [ ] Unit testing
+- [ ] CI/CD with GitHub Actions
+
 ## License
 
 This project is open source and available under the MIT License.
