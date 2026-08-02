@@ -11,6 +11,7 @@ A full-stack task management application built with React, Node.js, Express, Typ
 ![Supertest](https://img.shields.io/badge/Supertest-API%20Testing-FF6C37)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)
 ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/hayderalhatemi/task-manager/backend-ci.yml?branch=main&label=Backend%20CI&logo=githubactions)
 ![REST API](https://img.shields.io/badge/REST-API-orange)
 
 ## Live Demo
