@@ -11,13 +11,13 @@ A full-stack task management application built with React, Node.js, Express, Typ
 ## Screenshots
 
 ### Home Page
-<img src="./screenshots/home.png" alt="Home Page" width="800">
+<img src="./screenshots/home.png" alt="Home Page" width="700">
 
 ### Empty State
-<img src="./screenshots/empty.png" alt="Empty State" width="800">
+<img src="./screenshots/empty.png" alt="Empty State" width="700">
 
 ### Edit Task
-<img src="./screenshots/edit.png" alt="Edit Task" width="800">
+<img src="./screenshots/edit.png" alt="Edit Task" width="700">
 
 ## Features
 
