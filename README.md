@@ -8,6 +8,17 @@ A full-stack task management application built with React, Node.js, Express, Typ
 
 **Backend API:** https://task-manager-digi.onrender.com
 
+## Screenshots
+
+### Home Page
+![Home Page](./screenshots/home.png)
+
+### Edit Task
+![Edit Task](./screenshots/edit.png)
+
+### Empty State
+![Empty State](./screenshots/empty.png)
+
 ## Features
 
 - Create new tasks
