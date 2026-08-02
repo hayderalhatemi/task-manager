@@ -160,7 +160,14 @@ function App() {
             {tasks.map((task) => (
               <li key={task._id} className="task-item">
                 <div className="task-info">
-                  <strong>{task.title}</strong>
+                  <div className="task-text">
+                    <strong>{task.title}</strong>
+
+                    {task.description && (
+                      <p className="task-description">{task.description}</p>
+                    )}
+                  </div>
+
                   <span
                     className={
                       task.status === "completed"
@@ -170,6 +177,7 @@ function App() {
                   >
                     {task.status}
                   </span>
+
                   <span>
                     {task.dueDate
                       ? new Date(task.dueDate).toLocaleDateString("en-US", {
@@ -177,9 +185,10 @@ function App() {
                           month: "short",
                           year: "numeric",
                         })
-                      : "No due Date"}
+                      : "No due date"}
                   </span>
                 </div>
+
                 <div className="task-buttons">
                   <button
                     className="btn-edit"
