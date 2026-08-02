@@ -70,102 +70,135 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <h1>Task Manager</h1>
+    <div className="app-shell">
+      <main className="container">
+        <header className="page-header">
+          <div>
+            <p className="eyebrow">Stay organized</p>
+            <h1>Task Manager</h1>
+            <p className="subtitle">
+              Create, manage, and complete your tasks in one place.
+            </p>
+          </div>
 
-      <div className="add-form">
-        <input
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="date"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
-        />
-        <button className="btn-add" onClick={handleCreate}>
-          Add Task
-        </button>
-      </div>
+          <div className="task-count">
+            <span>{tasks.length}</span>
+            <small>{tasks.length === 1 ? "Task" : "Tasks"}</small>
+          </div>
+        </header>
 
-      {/* Edit form - shows only when editing */}
-      {editingTask && (
-        <div className="edit-form">
-          <h3>Editing: {editingTask.title}</h3>
+        <div className="add-form">
           <input
-            value={editTitle}
-            onChange={(e) => setEditTitle(e.target.value)}
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <input
-            value={editDescription}
-            onChange={(e) => setEditDescription(e.target.value)}
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <input
             type="date"
-            value={editDuedate}
-            onChange={(e) => setEditDueDate(e.target.value)}
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
           />
-          <select
-            value={editStatus}
-            onChange={(e) => setEditStatus(e.target.value)}
-          >
-            <option value="pending">Pending</option>
-            <option value="completed">Completed</option>
-          </select>
-          <div className="task-buttons">
-            <button className="btn-save" onClick={handleUpdate}>
-              Save
-            </button>
-            <button className="btn-cancel" onClick={() => setEditingTask(null)}>
-              Cancel
-            </button>
-          </div>
+          <button className="btn-add" onClick={handleCreate}>
+            Add Task
+          </button>
         </div>
-      )}
 
-      <ul>
-        {tasks.map((task) => (
-          <li key={task._id} className="task-item">
-            <div className="task-info">
-              <strong>{task.title}</strong>
-              <span
-                className={
-                  task.status === "completed"
-                    ? "status-completed"
-                    : "status-pending"
-                }
-              >
-                {task.status}
-              </span>
-              <span>
-                {task.dueDate
-                  ? new Date(task.dueDate).toLocaleDateString()
-                  : "No Date"}
-              </span>
-            </div>
+        {/* Edit form - shows only when editing */}
+        {editingTask && (
+          <div className="edit-form">
+            <h3>Edit Task</h3>
+            <p className="edit-subtitle">
+              Update the task details and save your changes.
+            </p>
+            <input
+              value={editTitle}
+              onChange={(e) => setEditTitle(e.target.value)}
+            />
+            <input
+              value={editDescription}
+              onChange={(e) => setEditDescription(e.target.value)}
+            />
+            <input
+              type="date"
+              value={editDuedate}
+              onChange={(e) => setEditDueDate(e.target.value)}
+            />
+            <select
+              value={editStatus}
+              onChange={(e) => setEditStatus(e.target.value)}
+            >
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+            </select>
             <div className="task-buttons">
-              <button
-                className="btn-edit"
-                onClick={() => handleEditClick(task)}
-              >
-                Edit
+              <button className="btn-save" onClick={handleUpdate}>
+                Save
               </button>
               <button
-                className="btn-delete"
-                onClick={() => handleDelete(task._id)}
+                className="btn-cancel"
+                onClick={() => setEditingTask(null)}
               >
-                Delete
+                Cancel
               </button>
             </div>
-          </li>
-        ))}
-      </ul>
+          </div>
+        )}
+
+        {tasks.length === 0 ? (
+          <div className="empty-state">
+            <span>✓</span>
+            <h2>No tasks yet</h2>
+            <p>Create your first task to get started.</p>
+          </div>
+        ) : (
+          <ul>
+            {tasks.map((task) => (
+              <li key={task._id} className="task-item">
+                <div className="task-info">
+                  <strong>{task.title}</strong>
+                  <span
+                    className={
+                      task.status === "completed"
+                        ? "status-completed"
+                        : "status-pending"
+                    }
+                  >
+                    {task.status}
+                  </span>
+                  <span>
+                    {task.dueDate
+                      ? new Date(task.dueDate).toLocaleDateString("en-US", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })
+                      : "No due Date"}
+                  </span>
+                </div>
+                <div className="task-buttons">
+                  <button
+                    className="btn-edit"
+                    onClick={() => handleEditClick(task)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="btn-delete"
+                    onClick={() => handleDelete(task._id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </main>
     </div>
   )
 }
