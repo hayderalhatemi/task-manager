@@ -27,6 +27,7 @@ function App() {
 
   const fetchTasks = async () => {
     const res = await getTasks()
+    console.log(res)
     setTasks(res.data)
   }
 

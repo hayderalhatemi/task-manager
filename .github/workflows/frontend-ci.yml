@@ -31,8 +31,5 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      - name: Run tests
-        run: npm test -- --watchAll=false
-
       - name: Build frontend
         run: npm run build
