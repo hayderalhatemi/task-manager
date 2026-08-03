@@ -1,4 +1,3 @@
-import path from "path"
 import swaggerJsdoc from "swagger-jsdoc"
 
 const swaggerOptions: swaggerJsdoc.Options = {
