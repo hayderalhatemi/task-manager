@@ -113,6 +113,20 @@ Express REST API
       ▼
 MongoDB Atlas
 ```
+## Entity Relationship Diagram (ERD)
+
+```mermaid
+erDiagram
+    TASK {
+        ObjectId _id
+        string title
+        string description
+        string status
+        date dueDate
+        date createdAt
+        date updatedAt
+    }
+```
 
 ## Quick Start
 
