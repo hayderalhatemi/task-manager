@@ -11,7 +11,8 @@ A full-stack task management application built with React, Node.js, Express, Typ
 ![Supertest](https://img.shields.io/badge/Supertest-API%20Testing-FF6C37)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)
 ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/hayderalhatemi/task-manager/backend-ci.yml?branch=main&label=Backend%20CI&logo=githubactions)
+![Backend CI](https://img.shields.io/github/actions/workflow/status/hayderalhatemi/task-manager/backend-ci.yml?branch=main&label=Backend%20CI&logo=githubactions)
+![Frontend CI](https://img.shields.io/github/actions/workflow/status/hayderalhatemi/task-manager/frontend-ci.yml?branch=main&label=Frontend%20CI&logo=githubactions)
 ![REST API](https://img.shields.io/badge/REST-API-orange)
 
 ## Live Demo
@@ -20,15 +21,20 @@ A full-stack task management application built with React, Node.js, Express, Typ
 
 **Backend API:** https://task-manager-digi.onrender.com
 
+**API Documentation (Swagger):** https://task-manager-digi.onrender.com/api-docs
+
 ## Screenshots
 
 ### Home Page
+
 <img src="./screenshots/home.png" alt="Home Page" width="700">
 
 ### Empty State
+
 <img src="./screenshots/empty.png" alt="Empty State" width="700">
 
 ### Edit Task
+
 <img src="./screenshots/edit.png" alt="Edit Task" width="700">
 
 ## Features
@@ -39,8 +45,10 @@ A full-stack task management application built with React, Node.js, Express, Typ
 - Mark tasks as pending or completed
 - Set due dates
 - RESTful API
+- Interactive Swagger/OpenAPI documentation
 - Responsive user interface
 - Backend API testing with Jest and Supertest
+- Automated CI with GitHub Actions
 
 ## Tech Stack
 
@@ -57,6 +65,7 @@ A full-stack task management application built with React, Node.js, Express, Typ
 - Express
 - TypeScript
 - Mongoose
+- Swagger / OpenAPI
 
 ### Testing
 
@@ -73,10 +82,18 @@ A full-stack task management application built with React, Node.js, Express, Typ
 - Vercel (Frontend)
 - Render (Backend)
 
+### CI
+
+- GitHub Actions
+
 ## Project Structure
 
 ```text
 task-manager/
+├── .github/
+│   └── workflows/
+│       ├── backend-ci.yml
+│       └── frontend-ci.yml
 ├── backend/
 └── frontend/
 ```
@@ -91,6 +108,9 @@ React Frontend
       │
       ▼
 Express REST API
+      │
+      ▼
+Swagger/OpenAPI
       │
       ▼
    Mongoose
@@ -148,14 +168,24 @@ Current test coverage includes:
 
 ## Environment Variables
 
-Create a `.env` file inside the `backend` folder:
+### Backend (`backend/.env`)
 
 ```env
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 ```
 
+### Frontend (`frontend/.env`)
+
+```env
+REACT_APP_API_URL=http://localhost:5000/api/tasks
+```
+
 ## API Endpoints
+
+Interactive API documentation is available at:
+
+`/api-docs`
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -173,11 +203,13 @@ Future improvements planned for this project:
 - [x] Backend deployment (Render)
 - [x] Frontend deployment (Vercel)
 - [x] Backend testing (Jest + Supertest)
+- [x] Backend CI with GitHub Actions
+- [x] Frontend CI with GitHub Actions
 - [ ] Frontend testing (React Testing Library)
 - [ ] Task filtering
 - [ ] Task search
 - [ ] Dark mode
-- [ ] CI/CD with GitHub Actions
+- [ ] Automatic deployment after CI
 
 ## Contributing
 
