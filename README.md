@@ -21,8 +21,6 @@ A full-stack task management application built with React, Node.js, Express, Typ
 
 **Backend API:** https://task-manager-digi.onrender.com
 
-**API Documentation (Swagger):** https://task-manager-digi.onrender.com/api-docs
-
 ## Screenshots
 
 ### Home Page
@@ -110,9 +108,6 @@ React Frontend
 Express REST API
       │
       ▼
-Swagger/OpenAPI
-      │
-      ▼
    Mongoose
       │
       ▼
@@ -144,15 +139,27 @@ npm install
 npm start
 ```
 
-## Running Tests
+## API Documentation
 
-From the backend folder:
+Interactive Swagger/OpenAPI documentation:
+
+- **Local:** http://localhost:5000/api-docs
+- **Production:** https://task-manager-digi.onrender.com/api-docs
+
+## Testing
+
+### Backend
+
+Automated API tests using Jest, Supertest, and an in-memory MongoDB instance (`mongodb-memory-server`).
+
+Run the tests:
 
 ```bash
+cd backend
 npm test
 ```
 
-Run tests with coverage:
+Generate a coverage report:
 
 ```bash
 npm test -- --coverage
@@ -183,12 +190,8 @@ REACT_APP_API_URL=http://localhost:5000/api/tasks
 
 ## API Endpoints
 
-Interactive API documentation is available at:
-
-`/api-docs`
-
 | Method | Endpoint | Description |
-|---------|----------|-------------|
+|--------|----------|-------------|
 | GET | `/api/tasks` | Get all tasks |
 | POST | `/api/tasks` | Create a task |
 | PUT | `/api/tasks/:id` | Update a task |
@@ -202,6 +205,7 @@ Future improvements planned for this project:
 - [x] Responsive design
 - [x] Backend deployment (Render)
 - [x] Frontend deployment (Vercel)
+- [x] Interactive Swagger/OpenAPI documentation
 - [x] Backend testing (Jest + Supertest)
 - [x] Backend CI with GitHub Actions
 - [x] Frontend CI with GitHub Actions
