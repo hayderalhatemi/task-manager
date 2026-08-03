@@ -3,11 +3,14 @@ import connectDB from "./config/db"
 import express, { Request, Response } from "express"
 import cors from "cors"
 import dotenv from "dotenv"
+import swaggerUi from "swagger-ui-express"
+import swaggerSpec from "./config/swagger"
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 app.use("/api/tasks", taskRoutes)
 
 app.get("/", (req: Request, res: Response) => {
